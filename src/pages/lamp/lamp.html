@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Lamp
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page2">
+    
+  <img src="assets/img/CWMXO4SHS62RjRvZ3QF3_lamp1.png" style="display:block;width:40%;height:auto;margin-left:auto;margin-right:auto;" />
+  <div class="spacer" style="width:300px;height:50px;" id="lamp-spacer3"></div>
+  <form id="lamp-form2">
+    <ion-item id="lamp-toggle1">
+      <ion-label>
+        Lamp 1
+      </ion-label>
+      <ion-toggle color="positive" checked="false" [(ngModel)]="items.status1" (ionChange)="update1()" [ngModelOptions]="{standalone: true}"></ion-toggle>
+    </ion-item>
+    <ion-item id="lamp-range1">
+      <ion-range min="1" max="1023" step="1" color="positive" value="50" [(ngModel)]="items.range1" (ionChange)="update_range1()" [ngModelOptions]="{standalone: true}">
+        <ion-label range-left>
+          Level
+        </ion-label>
+      </ion-range>
+    </ion-item>
+    <div class="spacer" style="width:300px;height:20px;" id="lamp-spacer4"></div>
+    <ion-item id="lamp-toggle2">
+      <ion-label>
+        Lamp 2
+      </ion-label>
+        <ion-toggle color="positive" checked="false" [(ngModel)]="items.status2" (ionChange)="update2()" [ngModelOptions]="{standalone: true}"></ion-toggle>
+
+    </ion-item>
+    <ion-item id="lamp-range2">
+              <ion-range min="1" max="1023" step="1" color="positive" value="50" [(ngModel)]="items.range2" (ionChange)="update_range2()" [ngModelOptions]="{standalone: true}">
+    <ion-label range-left>
+          Level
+        </ion-label>
+      </ion-range>
+    </ion-item>
+    <ion-item id="lamp-toggle3">
+      <ion-label>
+        Lamp 3
+      </ion-label>
+      <ion-toggle color="positive" checked="false" [(ngModel)]="items.status3" (ionChange)="update3()" [ngModelOptions]="{standalone: true}"></ion-toggle> 
+        
+    </ion-item>
+    <ion-item id="lamp-range3">
+              <ion-range min="1" max="1023" step="1" color="positive" value="50" [(ngModel)]="items.range3" (ionChange)="update_range3()" [ngModelOptions]="{standalone: true}">
+
+        <ion-label range-left>
+          Level
+        </ion-label>
+      </ion-range>
+    </ion-item>
+    <ion-item id="lamp-toggle4">
+      <ion-label>
+        Lamp 4
+      </ion-label>
+              <ion-toggle color="positive" checked="false" [(ngModel)]="items.status4" (ionChange)="update4()" [ngModelOptions]="{standalone: true}"></ion-toggle> 
+
+    </ion-item>
+    <ion-item id="lamp-range4">
+              <ion-range min="1" max="1023" step="1" color="positive" value="50" [(ngModel)]="items.range4" (ionChange)="update_range4()" [ngModelOptions]="{standalone: true}">
+        <ion-label range-left>
+
+       Level
+        </ion-label>
+      </ion-range>
+    </ion-item>
+      <ion-item id="lamp-range4">
+      <h2>{{items.amount}}</h2>
+    </ion-item>
+  </form>
+</ion-content>

@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Plug
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page3">
+  <img src="assets/img/NpNAq6n3TPGle3VWrblp_69389.png" style="display:block;width:40%;height:auto;margin-left:auto;margin-right:auto;" />
+  <div class="spacer" style="width:300px;height:53px;" id="plug-spacer2"></div>
+  <form id="plug-form3">
+    <ion-item id="plug-toggle5">
+      <ion-label>
+        Plug 1
+      </ion-label>
+      <ion-toggle color="positive" checked="false" [(ngModel)]="items.status1" (ionChange)="update1()" [ngModelOptions]="{standalone: true}"></ion-toggle>
+    </ion-item>
+    <ion-item id="plug-toggle6">
+      <ion-label>
+        Plug 2
+      </ion-label>
+      <ion-toggle color="positive" checked="false" [(ngModel)]="items.status2" (ionChange)="update2()" [ngModelOptions]="{standalone: true}"></ion-toggle>
+    </ion-item>
+    <ion-item id="plug-toggle7">
+      <ion-label>
+        USB
+      </ion-label>
+      <ion-toggle color="positive" checked="false" [(ngModel)]="items.status3" (ionChange)="update3()" [ngModelOptions]="{standalone: true}"></ion-toggle>
+    </ion-item>
+  </form>
+</ion-content>
