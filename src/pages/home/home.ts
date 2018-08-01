@@ -17,6 +17,10 @@ export class HomePage {
   ) {
     this.showData();
   }
+
+  ionViewDidLoad() {
+    this.showData()
+  }
   goToLamp(params) {
     if (!params) params = {};
     this.navCtrl.push(LampPage, { key: "LampControl" });
@@ -29,8 +33,13 @@ export class HomePage {
 
 
   showData() {
-    this.items = this.af.database.ref('/LampControl').once('value', res => {
-      console.log(res.val());
-    });
+    // const personRef: firebase.database.Reference = firebase.database().ref('/LampControl');
+    // personRef.on('value', personSnapshot => {
+    //   console.log(personSnapshot.val());
+    // });
+    // this.af.database.Reference.ref('/LampControl').once('value', res => {
+    //   console.log(res.val());
+    // });
+
   }
 }

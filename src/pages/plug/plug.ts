@@ -10,34 +10,36 @@ import { Observable } from 'rxjs/Observable';
 })
 export class PlugPage {
   key;
-  items;
+  items = {
+    P1: null,
+    P2: null,
+    USB: null,
+
+  };;
   datafire;
+  addcurrentinfo;
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private af: AngularFireDatabase,
   ) {
     this.key = navParams.get('key');
-
-    this.items = this.af.database.ref(this.key).once('value', data => {
+    const personRef: firebase.database.Reference = firebase.database().ref(this.key);
+    personRef.on('value', data => {
       this.addcurrentinfo = this.af.object(this.key);
-      this.items = {
-        status1: data.P1,
-        status2: data.P2,
-        status3: data.USB,
-      }
+      this.items = data.val();
       console.log(this.items)
     });
+
     console.log(this.key); //S1
   }
 
   update1() {
-    this.addcurrentinfo.update({ P1: this.items.status1 })
+    this.addcurrentinfo.update({ P1: this.items.P1 })
   }
   update2() {
-    this.addcurrentinfo.update({ P2: this.items.status2 })
+    this.addcurrentinfo.update({ P2: this.items.P2 })
   }
   update3() {
-    this.addcurrentinfo.update({ USB: this.items.status3 })
-
+    this.addcurrentinfo.update({ USB: this.items.USB })
   }
 
 }
